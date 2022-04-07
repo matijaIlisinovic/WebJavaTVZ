@@ -1,6 +1,7 @@
 package hr.tvz.ilisinovic.hardwareapp.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Hardware implements Serializable {
     private String id;
@@ -17,6 +18,18 @@ public class Hardware implements Serializable {
         this.numberOf = numberOf;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Hardware hardware = (Hardware) o;
+        return id.equals(hardware.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 
     public String getId() {
         return id;

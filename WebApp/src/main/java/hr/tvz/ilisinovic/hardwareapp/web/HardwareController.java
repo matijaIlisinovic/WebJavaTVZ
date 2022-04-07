@@ -1,14 +1,14 @@
 package hr.tvz.ilisinovic.hardwareapp.web;
 
 
+import hr.tvz.ilisinovic.hardwareapp.model.HardwareCommand;
 import hr.tvz.ilisinovic.hardwareapp.model.HardwareDTO;
 import hr.tvz.ilisinovic.hardwareapp.services.HardwareService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -31,6 +31,27 @@ public class HardwareController {
         }catch (Exception e) {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @PostMapping
+    public ResponseEntity<HardwareDTO> save(@Valid @RequestBody final HardwareCommand command){
+        return hardwareService.save(command)
+                .map(
+                        hardwareDTO -> ResponseEntity
+                                .status(HttpStatus.CREATED)
+                                .body(hardwareDTO)
+                )
+                .orElseGet(
+                        () -> ResponseEntity
+                                .status(HttpStatus.CONFLICT)
+                                .build()
+                );
+    }
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping("/{code}")
+    public void delete(@PathVariable String code){
+        hardwareService.deleteByCode(code);
     }
 
 }

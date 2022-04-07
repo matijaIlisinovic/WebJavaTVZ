@@ -11,4 +11,8 @@ public interface IHardwareRepository {
 
     Optional<Hardware> findByCode(String code);
 
+    public Optional<Hardware> save(final Hardware student);
+
+    public void deleteByCode(final String code);
+
 }
