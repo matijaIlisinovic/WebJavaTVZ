@@ -40,6 +40,10 @@ public class HardwareService implements IHardwareService {
         mockHardwareRepository.deleteByCode(code);
     }
 
+    public Optional<HardwareDTO> changePrice(String code, double price){
+        return mockHardwareRepository.changePrice(code, price).map(this::mapToDTO);
+    }
+
     private HardwareDTO mapToDTO(Hardware hardware){
         return new HardwareDTO(hardware.getName(),hardware.getPrice());
     }

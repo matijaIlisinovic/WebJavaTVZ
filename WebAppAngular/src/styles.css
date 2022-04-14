@@ -1,0 +1,6 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    height: max-content;
+    background-color: rgb(39, 39, 39);
+    color: aliceblue;
+}

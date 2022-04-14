@@ -44,4 +44,15 @@ public class MockHardwareRepository implements IHardwareRepository {
     public void deleteByCode(String code) {
         storage.removeIf(it -> Objects.equals(it.getId(), code));
     }
+
+    public Optional<Hardware> changePrice(String code, double price) {
+        for(Hardware item : storage){
+            if(item.getId().equals(code)){
+                item.setPrice(price);
+                return Optional.of(item);
+            }
+        }
+        return Optional.empty();
+
+    }
 }

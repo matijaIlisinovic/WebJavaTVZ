@@ -1,0 +1,19 @@
+
+
+ul *{
+    list-style: none;
+    background-color: rgb(65, 65, 65);
+}
+
+h2{
+    margin-left: 30px;
+}
+
+li {
+    margin: 2px;
+    padding: 10px;
+    text-align: center;
+    width: 250px;
+    border-radius: 10px;
+    
+}

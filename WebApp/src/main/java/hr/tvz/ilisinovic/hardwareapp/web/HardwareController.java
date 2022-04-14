@@ -2,6 +2,7 @@ package hr.tvz.ilisinovic.hardwareapp.web;
 
 
 import hr.tvz.ilisinovic.hardwareapp.model.HardwareCommand;
+import hr.tvz.ilisinovic.hardwareapp.model.HardwareCommandPrice;
 import hr.tvz.ilisinovic.hardwareapp.model.HardwareDTO;
 import hr.tvz.ilisinovic.hardwareapp.services.HardwareService;
 import org.springframework.http.HttpStatus;
@@ -52,6 +53,21 @@ public class HardwareController {
     @DeleteMapping("/{code}")
     public void delete(@PathVariable String code){
         hardwareService.deleteByCode(code);
+    }
+
+    @PatchMapping("/{code}")
+    public ResponseEntity<HardwareDTO> changePrice(@PathVariable String code,@Valid @RequestBody final HardwareCommandPrice command){
+        return hardwareService.changePrice(code, command.getPrice())
+                .map(
+                        hardwareDTO -> ResponseEntity
+                                .status(HttpStatus.OK)
+                                .body(hardwareDTO)
+                )
+                .orElseGet(
+                        () -> ResponseEntity
+                                .status(HttpStatus.NOT_FOUND)
+                                .build()
+                );
     }
 
 }
