@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Hardware } from 'src/app/interfaces/hardware';
+import { HardwareService } from 'src/app/services/hardware.service';
 
 @Component({
   selector: 'app-hardware-details',
@@ -8,11 +10,19 @@ import { Hardware } from 'src/app/interfaces/hardware';
 })
 export class HardwareDetailsComponent implements OnInit {
 
-  @Input() hardware: Hardware | undefined;
+  hardware:Hardware|undefined;
+  id: string | null | undefined;
 
-  constructor() { }
+  constructor(private hardwareService:HardwareService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.id = this.route.snapshot.paramMap.get('id');
+    if(this.id){
+      this.hardwareService.getHardwareById(this.id).subscribe(hardware => this.hardware = hardware); 
+    }
   }
 
+  ngOnChange(){
+    
+  }
 }

@@ -4,12 +4,22 @@ package hr.tvz.ilisinovic.hardwareapp.model;
 import java.io.Serializable;
 
 public class HardwareDTO implements Serializable{
+    private String code;
     private String name;
     private double price;
 
-    public HardwareDTO(String name, double price) {
+    public HardwareDTO(String id, String name, double price) {
+        this.code = id;
         this.name = name;
         this.price = price;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getName() {

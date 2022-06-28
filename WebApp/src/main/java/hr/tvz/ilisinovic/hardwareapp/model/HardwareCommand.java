@@ -5,7 +5,7 @@ import javax.validation.constraints.*;
 public class HardwareCommand {
     @NotBlank(message = "id must not be empty")
     @Pattern(message = "id must have 6 characters", regexp=".{6}")
-    private String id;
+    private String code;
 
     @NotBlank(message = "name must not be empty")
     private String name;
@@ -17,12 +17,22 @@ public class HardwareCommand {
     @NotBlank(message = "type must not be empty")
     private String type;
 
+
     @NotNull(message = "number of items must not be empty")
     @PositiveOrZero(message = "min number of items is zero")
-    private Integer numberOf;
 
-    public String getId() {
-        return id;
+    public HardwareCommand(String code, String name, Double price, String type, Integer stock) {
+        this.code = code;
+        this.name = name;
+        this.price = price;
+        this.type = type;
+        this.stock = stock;
+    }
+
+    private Integer stock;
+
+    public String getCode() {
+        return code;
     }
 
     public String getName() { return name;}
@@ -35,7 +45,7 @@ public class HardwareCommand {
         return HardwareType.valueOf(type);
     }
 
-    public int getNumberOf() {
-        return numberOf;
+    public int getStock() {
+        return stock;
     }
 }

@@ -1,0 +1,25 @@
+
+<label>
+    Id:
+    <input #id/>
+</label><br/><br/>
+<label>
+    Name:
+    <input #name/>
+</label><br/><br/>
+<label>
+    Price:
+    <input type="number" #price/>
+</label><br/><br/>
+<label>
+    Type:
+    <input #type/>
+</label><br/><br/>
+<label>
+    Number available:
+    <input type="number" #numberOf/>
+</label><br/><br/>
+<button (click)="add(id.value,name.value,+price.value,type.value,+numberOf.value);
+ id.value='';name.value=''; type.value='';price.value='';numberOf.value=''">
+Unesi hardver
+</button>

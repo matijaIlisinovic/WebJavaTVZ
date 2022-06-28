@@ -3,7 +3,10 @@
 <li *ngFor="let item of hardware"
 (click)="onSelect(item)"
 [class.selected]="item === selectedHardware">
-<span class="badge">{{item.name}}</span>
+<a [routerLink]="['/hardware', item.id]">  
+    <span class="badge">{{item.name}}</span>
+</a>
+<button (click)="onDelete(item.id)" style="padding: 5px;margin-left: 10px;">Del</button>
 </li>
 </ul>
-<app-hardware-details [hardware]="selectedHardware" ></app-hardware-details>
+<app-hardware-form></app-hardware-form>

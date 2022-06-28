@@ -1,0 +1,9 @@
+<h3>Recenzije za ovaj hardver:</h3>
+<ul>
+    <li *ngFor="let item of reviews"
+    (click)="onSelect(item)"
+    [class.selected]="item === selectedReview">
+        <span>{{item.title}} - {{item.grade}}/5</span>
+    </li>
+</ul>
+

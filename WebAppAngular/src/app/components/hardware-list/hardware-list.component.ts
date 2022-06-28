@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Hardware } from 'src/app/interfaces/hardware';
 import { HardwareService } from 'src/app/services/hardware.service';
 
@@ -22,8 +23,13 @@ export class HardwareListComponent implements OnInit {
     this.hardwareService.getHardware()
     .subscribe(hardware => this.hardware = hardware);
     }
-    onSelect(hardware: Hardware): void {
+
+  onSelect(hardware: Hardware): void {
     this.selectedHardware = hardware;
     }
-    
+
+  onDelete(id:string):void{
+    this.hardwareService.deleteHardwareById(id).subscribe()
+    this.getHardware()
+  }
 }

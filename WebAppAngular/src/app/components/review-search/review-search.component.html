@@ -1,0 +1,17 @@
+<label>
+    Title:
+    <input #title/>
+</label><br/><br/>
+<button (click)="add(title.value);
+ title.value='';">
+Pretraži
+</button>
+<ul>
+    <li *ngFor="let item of reviews"
+    (click)="onSelect(item)"
+    [class.selected]="item === selectedReview">
+    <a [routerLink]="['/reviewSearch', item.id]">  
+        <span>{{item.title}}</span>
+    </a>
+    </li>
+</ul>

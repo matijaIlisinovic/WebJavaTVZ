@@ -1,0 +1,49 @@
+{
+    "language": {
+    "croatian": "Hrvaški",
+    "english": "Angleščina",
+    "slovenian": "Sloveščina"
+    },
+    "navbar": {
+    "hardware": "Strojna oprema",
+    "info": "Prijavljeni ste kot",
+    "logout": "Odjava"
+    },
+    "hardware": {
+    "title": "Sezam strojne opreme",
+    "input":"Dodajte strojno opremo",
+    "inputTitle": "Dodajte novo strojno opremo",
+    "code": "Koda:",
+    "name": "Ime:",
+    "type":  {
+        "title":"Tip:",
+        "storage":"Shranjivanje podatkov",
+        "other": "Ostalo"
+    },
+    "stock": "Na zalogi:",
+    "price": "Cena:",
+    "submit": "Dodajte strojno opremo",
+    "back": "Nazaj"
+    },
+    "login": {
+    "title": "Prijava",
+    "username": "Uporabniško ime",
+    "password": "Geslo",
+    "loginButton": "Prijava",
+    "loginError": "Prijava ni uspela! Preverite svoje poverilnice in poskusite znova.",
+    "insert": "Dodajte"
+    },"detail": {
+        "detail": "Podrobnosti o",
+        "payment": "To strojno opremo je mogoče kupiti na 6 obrokov.",
+        "reviews": "Pregledi:",
+        "noReviews":"Za to strojno opremo ni ocen."
+        },
+    "pageNotFound":{
+    "warning": "Stran ni najdena",
+    "home": "Vrnitev na domačo stran"
+    },
+    "forbidden":{
+    "warning":"Neoblaščen dostop",
+    "back": "Vrnitev na domačo stran"
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "language": {
+    "croatian": "Croatian",
+    "english": "English",
+    "slovenian": "Slovenian"
+    },
+    "navbar": {
+    "hardware": "Hardware",
+    "info": "You are logged in as",
+    "logout": "Log out"
+    },
+    "hardware": {
+    "title": "Hardware",
+    "input":"Hardware Insert",
+    "inputTitle": "Insert new hardware",
+    "code": "Code:",
+    "name": "Name:",
+    "type":  {
+        "title":"Type:",
+        "storage":"Storage",
+        "other": "Other"
+    },
+    "stock": "In stock:",
+    "price": "Price:",
+    "submit": "Insert Hardware",
+    "back": "Go back"
+    },
+    "login": {
+    "title": "Login",
+    "username": "Username",
+    "password": "Password",
+    "loginButton": "Login",
+    "loginError": "Login failed! Check your credentials and try again.",
+    "insert": "Insert"
+    },"detail": {
+        "detail": "Details about",
+        "payment": "This hardware can be bought in up to 6 installments.",
+        "reviews": "Reviews:",
+        "noReviews":"There are no reviews available for this hardware."
+        },
+    "pageNotFound":{
+    "warning": "Page not found",
+    "home": "Return to home page"
+    },
+    "forbidden":{
+    "warning":"Unauthorized access",
+    "back": "Return to homepage"
+    }
+}

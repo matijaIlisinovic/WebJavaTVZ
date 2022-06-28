@@ -1,0 +1,52 @@
+<h2>{{'hardware.input' | translate}}</h2>
+<div>
+  <h3>{{'hardware.inputTitle' | translate}}</h3>
+  <div>
+    <label>{{'hardware.code' | translate}}
+      <div>
+        <input #code />
+      </div>
+    </label>
+  </div>
+  <div>
+    <label>{{'hardware.name' | translate}}
+      <div>
+        <input #name />
+      </div>
+    </label>
+  </div>
+  <div>
+    <label>{{'hardware.type.title' | translate}}
+      <div>
+        <select #type >
+          <option value="CPU">CPU</option>
+          <option value="GPU">GPU</option>
+          <option value="MBO">MBO</option>
+          <option value="RAM">RAM</option>
+          <option value="STORAGE">{{'hardware.type.storage' | translate}}</option>
+          <option value="OTHER">{{'hardware.type.other' | translate}}</option>
+        </select>
+      </div>
+    </label>
+  </div>
+  <div>
+    <label>{{'hardware.stock' | translate}}
+      <div>
+        <input type="number" #stock />
+      </div>
+    </label>
+  </div>
+  <div>
+    <label>{{'hardware.price' | translate}}
+      <div>
+        <input type="number" #price />
+      </div>
+    </label>
+  </div>
+
+  <button (click)="add(code.value, name.value, type.value, +stock.value, +price.value); code.value=''; name.value=''; type.value='CPU'; stock.value=''; price.value=''">
+    {{'hardware.submit' | translate}}
+  </button>
+
+  <button (click)="goBack()">{{'hardware.back' | translate}}</button>
+</div>

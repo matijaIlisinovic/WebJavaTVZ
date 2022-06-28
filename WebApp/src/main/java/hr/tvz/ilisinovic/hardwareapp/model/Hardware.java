@@ -1,14 +1,32 @@
 package hr.tvz.ilisinovic.hardwareapp.model;
 
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
+@Entity
+@Table(name="hardware")
 public class Hardware implements Serializable {
+
+    @Id
     private String id;
+
+    @Column(name = "hardwarename")
     private String name;
+
     private double price;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "hardwaretype")
     private HardwareType type;
+
+    @Column(name = "numberof")
     private int numberOf;
+
+    @OneToMany(mappedBy="hardware",fetch=FetchType.EAGER)
+    private List<Review> reviewList;
+
 
     public Hardware(String id, String name, double price, HardwareType type, int numberOf) {
         this.id = id;
@@ -16,6 +34,10 @@ public class Hardware implements Serializable {
         this.price = price;
         this.type = type;
         this.numberOf = numberOf;
+    }
+
+    public Hardware() {
+
     }
 
     @Override
